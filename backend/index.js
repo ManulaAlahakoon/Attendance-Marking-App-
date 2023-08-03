@@ -11,10 +11,21 @@ const db = mysql.createConnection({
 })
 
 
-
-app.get("/", (req,res) => {
-    res.json("hello this is the backend")
+app.get("/", (req, res) => {
+    res.json("Conncted")
 })
+
+
+app.get("/people", (req, res) => {
+    
+    const query = "select * from people_detail";
+    db.query(query, (err, data) => {
+        if (err) return res.json(err)
+        return res.json(data)
+    })
+   
+})
+
 
 
 app.listen(8800, () => {
