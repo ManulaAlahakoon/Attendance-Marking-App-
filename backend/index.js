@@ -3,6 +3,9 @@ import mysql from "mysql"
 
 const app = express()
 
+app.use(express.json())
+//By default , we cannot send any data to express server through client. To prevent that we use this middlewear
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -30,7 +33,16 @@ app.get("/people", (req, res) => {
 app.post("/people", (req, res) => {
 
     const sqlQuery = "insert into people_detail values (?)";
-    const values = ["CST_21_31", "Ravindu", "Galle","0714394229", "A student in UWU"]
+    const values = [
+        
+        req.body.registration_id,
+        req.body.name,
+        req.body.city,
+        req.body.phone_number,
+        req.body.more_detail
+       // "CST_21_31", "Ravindu", "Galle", "0714394229", "A student in UWU"
+    
+    ]
 
     db.query(sqlQuery, [values], (err, data) => {
         if (err) return res.json(err)
