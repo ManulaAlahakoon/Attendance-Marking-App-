@@ -27,6 +27,17 @@ app.get("/people", (req, res) => {
 })
 
 
+app.post("/people", (req, res) => {
+
+    const sqlQuery = "insert into people_detail values (?)";
+    const values = ["CST_21_31", "Ravindu", "Galle","0714394229", "A student in UWU"]
+
+    db.query(sqlQuery, [values], (err, data) => {
+        if (err) return res.json(err)
+        
+        return res.json("Data added");
+    })
+})
 
 app.listen(8800, () => {
     
