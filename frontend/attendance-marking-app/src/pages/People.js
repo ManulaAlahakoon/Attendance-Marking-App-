@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const People = () => {
 
@@ -19,9 +20,9 @@ const People = () => {
     fetchAllPeople();
   },[])
   return (
-    <div className="PeopleDetail">
+    <div className="PeopleDetailPage">
       
-      <div className="peopleDetail">
+      <div className="people">
         
         {people.map(person => (
 
@@ -36,7 +37,8 @@ const People = () => {
           
         ))} 
         
-    </div>
+      </div>
+      <button><Link to="/registration">Register</Link></button>
     </div>
     
   )
