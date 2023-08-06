@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
 
@@ -16,6 +17,8 @@ const Registration = () => {
     }
   )
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
 
     setNewUser((prev)=>({...prev,[e.target.name]:e.target.value}))
@@ -26,7 +29,7 @@ const Registration = () => {
     e.preventDefault()
     try {
       await axios.post("http://localhost:8800/people",newUser)
-
+      navigate("/people")
       
     } catch (error) {
       console.log(error)
