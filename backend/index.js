@@ -50,7 +50,7 @@ app.post("/people", (req, res) => {
         req.body.name,
         req.body.city,
         req.body.phone_number,
-        req.body.more_detail
+        req.body.more_details
        // "CST_21_31", "Ravindu", "Galle", "0714394229", "A student in UWU"
     
     ]
