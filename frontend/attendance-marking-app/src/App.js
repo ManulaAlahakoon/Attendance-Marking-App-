@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Registration from './pages/Registration';
 import People from './pages/People';
 import Attendance from './pages/Attendance';
 import Update from './pages/Update';
+import "./style.css";
 
 function App() {
   return (
