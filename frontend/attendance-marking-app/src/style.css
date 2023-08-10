@@ -1,0 +1,20 @@
+.App{
+    /*
+    width: 80%;
+    margin: 50px auto;
+    border: 2px solid red;
+*/
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.person{
+
+    margin: 5px 0;
+    padding: 20px;
+    border: 1px black solid;
+}
