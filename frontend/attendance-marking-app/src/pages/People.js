@@ -32,7 +32,8 @@ const People = () => {
             <h4>{person.registration_id}</h4>
             <p>{person.city}</p>
             <p>{ person.phone_number}</p>
-
+            <button>Delete</button>
+            <button>Update</button>
           </div>
           
         ))} 
